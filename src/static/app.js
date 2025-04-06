@@ -83,4 +83,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize app
   fetchActivities();
+
+  const activities = [
+    {
+      name: "Basketball",
+      description: "Join the basketball team and compete in tournaments.",
+      participants: ["John Doe", "Jane Smith", "Alex Johnson"],
+    },
+    {
+      name: "Drama Club",
+      description: "Act, direct, and produce plays with the drama club.",
+      participants: ["Emily Davis", "Michael Brown"],
+    },
+  ];
+
+  const activitiesList = document.getElementById("activities-list");
+  activitiesList.innerHTML = "";
+
+  activities.forEach((activity) => {
+    const card = document.createElement("div");
+    card.className = "activity-card";
+
+    card.innerHTML = `
+      <h4>${activity.name}</h4>
+      <p>${activity.description}</p>
+      <div class="participants">
+        <h5>Participants:</h5>
+        <ul>
+          ${activity.participants.map((p) => `<li>${p}</li>`).join("")}
+        </ul>
+      </div>
+    `;
+
+    activitiesList.appendChild(card);
+  });
 });
