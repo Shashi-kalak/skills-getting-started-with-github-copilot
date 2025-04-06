@@ -97,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
-  const activitiesList = document.getElementById("activities-list");
   activitiesList.innerHTML = "";
 
   activities.forEach((activity) => {
